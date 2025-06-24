@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Website</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light py-4 fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex justify-content-between align-items-center order-lg-0" href="main.html">
+                <i class='bx bxs-shopping-bag'></i>
+                <span class="text-uppercase fw-lighter ms-2">Etsy</span>
+            </a>
+
+            <div class="order-lg-2 nav-btns">
+                <button type="button" class="btn"><a href="login.html" style="text-decoration: none; color: black;">Sign in</a></button>
+                <button type="button" class="btn position-relative">
+                    <a href="cart.html" style="color: black;"><i class='bx bxs-cart'></i></a>
+                    <span class="position-absolute top-0 start-100 translate-middle badge bg-danger">5</span>
+                </button>
+                <button type="button" class="btn position-relative">
+                    <i class='bx bxs-heart'></i>
+                    <span class="position-absolute top-0 start-100 translate-middle badge bg-danger">2</span>
+                </button>
+                <button type="button" class="btn">
+                    <i class='bx bx-search'></i>
+                </button>
+            </div>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse order-lg-1" id="navMenu">
+                <ul class="navbar-nav mx-auto text-center">
+                    <li class="nav-item px-2 py-2">
+                        <a class="nav-link text-uppercase text-dark" href="#header">Home</a>
+                    </li>
+                    <li class="nav-item px-2 py-2">
+                        <a class="nav-link text-uppercase text-dark" href="#collection">collection</a>
+                    </li>
+                    <li class="nav-item px-2 py-2">
+                        <a class="nav-link text-uppercase text-dark" href="#special">specials</a>
+                    </li>
+                    <li class="nav-item px-2 py-2">
+                        <a class="nav-link text-uppercase text-dark" href="#about">about us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- header -->
+    <header id="header" class="vh-100 carousel slide" data-bs-ride="carousel" style="padding-top: 104px;">
+        <div class="container h-100 d-flex align-items-center carousel-inner">
+            <div class="text-center carousel-item active">
+                <h2 class="text-capitalize text-white">best collection</h2>
+                <h1 class="text-uppercase py-2 fw-bold text-white">new arrivals</h1>
+                <a href="#" class="btn mt-3 text-uppercase">shop now</a>
+            </div>
+            <div class="text-center carousel-item">
+                <h2 class="text-capitalize text-white">best price & offer</h2>
+                <h1 class="text-uppercase py-2 fw-bold text-white">new season</h1>
+                <a href="#" class="btn mt-3 text-uppercase">buy now</a>
+            </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#header" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#header" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </header>
+
+    <!-- collection -->
+    <section id="collection" class="py-5">
+        <div class="container">
+            <div class="title text-center">
+                <h2 class="position-relative d-inline-block">New Collection</h2>
+            </div>
+
+            <div class="row g-0">
+                <div class="d-flex flex-wrap justify-content-center mt-5 filter-button-group">
+                    <button type="button" class="btn m-2 text-dark active-filter-btn" data-filter="*">All</button>
+                    <button type="button" class="btn m-2 text-dark" data-filter=".best">Best Sellers</button>
+                    <button type="button" class="btn m-2 text-dark" data-filter=".feat">Featured</button>
+                    <button type="button" class="btn m-2 text-dark" data-filter=".new">New Arrival</button>
+                </div>
+
+                <div class="collection-list mt-4 row gx-0 gy-3">
+                    <div class="col-md-6 col-lg-4 col-xl-3 p-2 best">
+                        <div class="collection-img position-relative">
+                            <img src="https://i.pinimg.com/736x/e5/37/e1/e537e1a5ae5a84489718a80a0cd82cf0.jpg" height="350px" width="350px"
+                                class="w-100">
+                            <span
+                                class="position-absolute bg-primary text-white d-flex align-items-center justify-content-center">sale</span>
+                        </div>
+                        <div class="text-center">
+                            <div class="rating mt-3">
+                                <span class="text-primary"><i class='bx bxs-star'></i></span>
+                                <span class="text-primary"><i class='bx bxs-star'></i></span>
+                                <span class="text-primary"><i class='bx bxs-star'></i></span>
+                                <span class="text-primary"><i class='bx bxs-star'></i></span>
+                                <span class="text-primary"><i class='bx bxs-star'></i></span>
+                            </div>
+                            <p class="text-capitalize my-1">OnePiece</p>
+                            <span class="fw-bold">&#8377; 40</span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 col-xl-3 p-2 feat">
+                        <div class="collection-img position-relative">
+                            <img src="https://i.pinimg.com/736x/34/67/46/3467460b87f5f68da76b60080a20199c.jpg" height="350px" width="350px"
+                                class="w-100">
+                            <span
+                                class="position-absolute bg-primary text-white d-flex align-items-center justify-content-center">sale</span>
+                        </div>
+                        <div class="text-center">
+                            <div class="rating mt-3">
+                                <span class="text-primary"><i class='bx bxs-star'></i></span>
+                                <span class="text-primary"><i class='bx bxs-star'></i></span>
+                                <span class="text-primary"><i class='bx bxs-star'></i></span>
+                                <span class="text-primary"><i class='bx bxs-star'></i></span>
+                                <span class="text-primary"><i class='bx bxs-star'></i></span>
+                            </div>
+                            <p class="text-capitalize my-1">Jacket</p>
+                            <span class="fw-bold">&#8377; 50</span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 col-xl-3 p-2 new">
+                        <div class="collection-img position-relative">
+                            <img src="https://i.pinimg.com/736x/ab/77/f3/ab77f3ca94bc96e82dac25cde4d4c36a.jpg" height="350px" width="350px"
+                                class="w-100">
+                            <span
+                                class="position-absolute bg-primary text-white d-flex align-items-center justify-content-center">sale</span>
+                        </div>
+                        <div class="text-center">
+                            <div class="rating mt-3">
+                                <span class="text-primary"><i class='bx bxs-star'></i></span>
+                                <span class="text-primary"><i class='bx bxs-star'></i></span>
+                                <span class="text-primary"><i class='bx bxs-star'></i></span>
+                                <span class="text-primary"><i class='bx bxs-star'></i></span>
+                                <span class="text-primary"><i class='bx bxs-star'></i></span>
+                            </div>
+                            <p class="text-capitalize my-1">Frocks</p>
+                            <span class="fw-bold">&#8377; 60</span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 col-xl-3 p-2 best">
+                        <div class="collection-img position-relative">
+                            <img src="https://i.pinimg.com/736x/ac/df/82/acdf82d23b3dbbe0f0a95cc658ccfa8c.jpg" height="350px" width="350px"
+                                class="w-100">
+                            <span
+                                class="position-absolute bg-primary text-white d-flex align-items-center justify-content-center">sale</span>
+                        </div>
+                        <div class="text-center">
+                            <div class="rating mt-3">
+                                <span class="text-primary"><i class='bx bxs-star'></i></span>
+                                <span class="text-primary"><i class='bx bxs-star'></i></span>
+                                <span class="text-primary"><i class='bx bxs-star'></i></span>
+                                <span class="text-primary"><i class='bx bxs-star'></i></span>
+                                <span class="text-primary"><i class='bx bxs-star'></i></span>
+                            </div>
+                            <p class="text-capitalize my-1">Shirt Pant</p>
+                            <span class="fw-bold">&#8377; 70</span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 col-xl-3 p-2 new">
+                        <div class="collection-img position-relative">
+                            <img src="https://i.pinimg.com/736x/43/ef/67/43ef67d7c365a2ed716de0d4252aee64.jpg" height="350px" width="350px"
+                                class="w-100">
+                            <span
+                                class="position-absolute bg-primary text-white d-flex align-items-center justify-content-center">sale</span>
+                        </div>
+                        <div class="text-center">
+                            <div class="rating mt-3">
+                                <span class="text-primary"><i class='bx bxs-star'></i></span>
+                                <span class="text-primary"><i class='bx bxs-star'></i></span>
+                                <span class="text-primary"><i class='bx bxs-star'></i></span>
+                                <span class="text-primary"><i class='bx bxs-star'></i></span>
+                                <span class="text-primary"><i class='bx bxs-star'></i></span>
+                            </div>
+                            <p class="text-capitalize my-1">Sun Glass</p>
+                            <span class="fw-bold">&#8377; 80</span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 col-xl-3 p-2 best">
+                        <div class="collection-img position-relative">
+                            <img src="https://i.pinimg.com/736x/48/2c/42/482c42a4335091f4875731e17cfbbed2.jpg" height="350px" width="350px"
+                                class="w-100">
+                            <span
+                                class="position-absolute bg-primary text-white d-flex align-items-center justify-content-center">sale</span>
+                        </div>
+                        <div class="text-center">
+                            <div class="rating mt-3">
+                                <span class="text-primary"><i class='bx bxs-star'></i></span>
+                                <span class="text-primary"><i class='bx bxs-star'></i></span>
+                                <span class="text-primary"><i class='bx bxs-star'></i></span>
+                                <span class="text-primary"><i class='bx bxs-star'></i></span>
+                                <span class="text-primary"><i class='bx bxs-star'></i></span>
+                            </div>
+                            <p class="text-capitalize my-1">Pendant</p>
+                            <span class="fw-bold">&#8377; 90</span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 col-xl-3 p-2 best">
+                        <div class="collection-img position-relative">
+                            <img src="https://i.pinimg.com/736x/6e/16/99/6e1699e1f701a94d445713ca09a2ba5c.jpg" height="350px" width="350px"
+                                class="w-100">
+                            <span
+                                class="position-absolute bg-primary text-white d-flex align-items-center justify-content-center">sale</span>
+                        </div>
+                        <div class="text-center">
+                            <div class="rating mt-3">
+                                <span class="text-primary"><i class='bx bxs-star'></i></span>
+                                <span class="text-primary"><i class='bx bxs-star'></i></span>
+                                <span class="text-primary"><i class='bx bxs-star'></i></span>
+                                <span class="text-primary"><i class='bx bxs-star'></i></span>
+                                <span class="text-primary"><i class='bx bxs-star'></i></span>
+                            </div>
+                            <p class="text-capitalize my-1">Shoes</p>
+                            <span class="fw-bold">&#8377; 100</span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4 col-xl-3 p-2 feat">
+                        <div class="collection-img position-relative">
+                            <img src="https://i.pinimg.com/736x/04/73/1a/04731a9b355b5847ca8d86c1fc00c592.jpg" height="350px" width="350px"
+                                class="w-100">
+                            <span
+                                class="position-absolute bg-primary text-white d-flex align-items-center justify-content-center">sale</span>
+                        </div>
+                        <div class="text-center">
+                            <div class="rating mt-3">
+                                <span class="text-primary"><i class='bx bxs-star'></i></span>
+                                <span class="text-primary"><i class='bx bxs-star'></i></span>
+                                <span class="text-primary"><i class='bx bxs-star'></i></span>
+                                <span class="text-primary"><i class='bx bxs-star'></i></span>
+                                <span class="text-primary"><i class='bx bxs-star'></i></span>
+                            </div>
+                            <p class="text-capitalize my-1">Home Accessories</p>
+                            <span class="fw-bold">&#8377; 200</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- special products -->
+    <section id="special" class="py-5">
+        <div class="container">
+            <div class="title text-center py-5">
+                <h2 class="position-relative d-inline-block">Special Selection</h2>
+            </div>
+
+            <div class="special-list row g-0">
+                <div class="col-md-6 col-lg-4 col-xl-3 p-2">
+                    <div class="special-img position-relative overflow-hidden">
+                        <img src="https://i.pinimg.com/736x/a2/62/c5/a262c52312a653bdd30065135fdfae99.jpg" height="350px" width="350px"
+                            class="w-100">
+                        <span
+                            class="position-absolute d-flex align-items-center justify-content-center text-primary fs-4">
+                            <i class='bx bxs-heart'></i>
+                        </span>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-capitalize mt-3 mb-1">Headphones</p>
+                        <span class="fw-bold d-block">&#8377; 300</span>
+                        <a href="#" class="btn btn-primary mt-3">Add to Cart</a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 col-xl-3 p-2">
+                    <div class="special-img 
+                        position-relative overflow-hidden">
+                        <img src="https://i.pinimg.com/736x/75/3c/ca/753ccad1a9c7f775eb6b4ac4c4e231a2.jpg" height="350px" width="350px"
+                            class="w-100">
+                        <span
+                            class="position-absolute d-flex align-items-center justify-content-center text-primary fs-4">
+                            <i class='bx bxs-heart'></i>
+                        </span>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-capitalize mt-3 mb-1">Laptops</p>
+                        <span class="fw-bold d-block">&#8377; 400</span>
+                        <a href="#" class="btn btn-primary mt-3">Add to Cart</a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 col-xl-3 p-2">
+                    <div class="special-img 
+                        position-relative overflow-hidden">
+                        <img src="https://i.pinimg.com/736x/14/04/71/1404719207b4d0e57e256a6c2b085521.jpg" height="350px" width="350px"
+                            class="w-100">
+                        <span
+                            class="position-absolute d-flex align-items-center justify-content-center text-primary fs-4">
+                            <i class='bx bxs-heart'></i>
+                        </span>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-capitalize mt-3 mb-1">Mobile Phones</p>
+                        <span class="fw-bold d-block">&#8377; 500</span>
+                        <a href="#" class="btn btn-primary mt-3">Add to Cart</a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 col-xl-3 p-2">
+                    <div class="special-img 
+                        position-relative overflow-hidden">
+                        <img src="https://i.pinimg.com/736x/0f/88/ea/0f88ea678560f39a95931c0556b0a6a2.jpg" height="350px" width="350px"
+                            class="w-100">
+                        <span
+                            class="position-absolute d-flex align-items-center justify-content-center text-primary fs-4">
+                            <i class='bx bxs-heart'></i>
+                        </span>
+                    </div>
+                    <div class="text-center">
+                        <p class="text-capitalize mt-3 mb-1">Night Lamp</p>
+                        <span class="fw-bold d-block">&#8377; 600</span>
+                        <a href="#" class="btn btn-primary mt-3">Add to Cart</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- about us -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="row gy-lg-5 align-items-center">
+                <div class="col-lg-6 order-lg-1 text-center text-lg-start">
+                    <div class="title pt-3 pb-5">
+                        <h2 class="position-relative d-inline-block ms-4">About Us</h2>
+                    </div>
+                    <p class="lead text-muted">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, ipsam.
+                    </p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem fuga blanditiis, modi
+                        exercitationem quae quam eveniet! Minus labore voluptatibus corporis recusandae accusantium
+                        velit, nemo, nobis, nulla ullam pariatur totam quos.</p>
+                </div>
+                <div class="col-lg-6 order-lg-0">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTq-NQZRTrkjUHbCaDMsl7ox08irGYo0RygA&s" height="400px" width="400px"
+                        alt="" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer class="bg-success py-5">
+        <div class="container">
+            <div class="row text-white g-4">
+                <div class="col-md-6 col-lg-3">
+                    <a class="text-uppercase text-decoration-none brand text-white" href="main.html">Attire</a>
+                    <p class="text-white text-muted mt-3">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Nostrum mollitia quisquam veniam odit cupiditate, ullam aut voluptas velit dolor ipsam?</p>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <h5 class="fw-light">Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="my-3">
+                            <a href="#" class="text-white text-decoration-none text-muted">
+                                <i class='bx bx-chevron-right'></i> Home
+                            </a>
+                        </li>
+                        <li class="my-3">
+                            <a href="#" class="text-white text-decoration-none text-muted">
+                                <i class='bx bx-chevron-right'></i> Collection
+                            </a>
+                        </li>
+                        <li class="my-3">
+                            <a href="#" class="text-white text-decoration-none text-muted">
+                                <i class='bx bx-chevron-right'></i> Blogs
+                            </a>
+                        </li>
+                        <li class="my-3">
+                            <a href="#" class="text-white text-decoration-none text-muted">
+                                <i class='bx bx-chevron-right'></i> About Us
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <h5 class="fw-light mb-3">Contact Us</h5>
+                    <div class="d-flex justify-content-start align-items-start my-2 text-muted">
+                        <span class="me-3">
+                            <i class='bx bxs-map'></i></i>
+                        </span>
+                        <span class="fw-light">
+                            ITER College, Jagamara, Bhubaneswar, Odisha, India
+                        </span>
+                    </div>
+                    <div class="d-flex justify-content-start align-items-start my-2 text-muted">
+                        <span class="me-3">
+                            <i class='bx bxs-envelope'></i>
+                        </span>
+                        <span class="fw-light">
+                            attire.support@gmail.com
+                        </span>
+                    </div>
+                    <div class="d-flex justify-content-start align-items-start my-2 text-muted">
+                        <span class="me-3">
+                            <i class='bx bxs-phone'></i>
+                        </span>
+                        <span class="fw-light">
+                            +9786 6776 236
+                        </span>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <h5 class="fw-light mb-3">Follow Us</h5>
+                    <div>
+                        <ul class="list-unstyled d-flex">
+                            <li>
+                                <a href="#" class="text-white text-decoration-none text-muted fs-4 me-4">
+                                    <i class='bx bxl-facebook-circle'></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-white text-decoration-none text-muted fs-4 me-4">
+                                    <i class='bx bxl-twitter'></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-white text-decoration-none text-muted fs-4 me-4">
+                                    <i class='bx bxl-instagram-alt'></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="text-white text-decoration-none text-muted fs-4 me-4">
+                                    <i class='bx bxl-pinterest'></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
