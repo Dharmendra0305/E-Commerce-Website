@@ -13,3 +13,7 @@ A responsive and visually engaging frontend for an e-commerce platform, crafted 
 - HTML5 – Semantic markup structure
 - CSS3 – Custom styles and layout design
 - Bootstrap 5 – Responsive grid and reusable components
+
+<h2>E-Commerec Website</h2>
+
+![E-Commerce WebPage](https://github.com/Dharmendra0305/E-Commerce-Website/blob/006afe56ef8e4b62ad832199df465e3bbb7774ad/127.0.0.1_5500-E-Commerce%20Website-fpscreenshot.png)
